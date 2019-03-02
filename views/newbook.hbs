@@ -1,0 +1,25 @@
+<h1>Create a new book</h1>
+<form action="/newbook" method="post" autocomplete="off">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title">
+    </div>
+    <div class="form-group">
+        <label for="">Description:</label>
+        <input class="form-control" type="text" name="description" id="">
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <select class="form-control" name="author" id="theAuthor">
+            {{#each authorsFromDB}}
+            <option value="{{_id}}">{{firstName}} {{ lastName }}</option>
+            {{/each}}
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Rating</label>
+        <input class="form-control" type="number" name="rating" id="" placeholder="1">
+    </div>
+    <button type="submit" class="btn btn-primary">Save the book</button>
+</form>
